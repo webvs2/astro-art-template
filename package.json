@@ -1,7 +1,18 @@
 {
-  "name": "my-astro-site",
+  "name": "atrom",
   "type": "module",
   "version": "0.0.1",
+  "description": "A beautiful, responsive Astro theme with clean design and modern aesthetics",
+  "keywords": [
+    "astro",
+    "astro-theme",
+    "modern",
+    "responsive",
+    "multilingual",
+    "clean-design",
+    "website",
+    "static-site-generator"
+  ],
   "engines": {
     "node": ">=22.12.0"
   },

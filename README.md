@@ -2,6 +2,10 @@
 
 [English](./README.md) | [中文](./README-zh.md)
 
+<p align="center">
+  <img src="./public/images/atrom-preview-en.png" alt="Atrom Theme Preview - English" width="800">
+</p>
+
 A beautiful, responsive Astro theme with a clean design and modern aesthetics, built for Astro v6. Supports Chinese and English language switching, which can be easily toggled in the navigation bar.
 
 ## Features

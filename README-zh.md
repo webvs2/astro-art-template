@@ -2,6 +2,10 @@
 
 [English](./README.md) | [中文](./README-zh.md)
 
+<p align="center">
+  <img src="./public/images/atrom-preview-zh.png" alt="Atrom 主题预览 - 中文" width="800">
+</p>
+
 一个美观、响应式的 Astro 主题，采用简洁设计和现代美学风格，专为 Astro v6 构建。支持中英文语言切换，可在导航栏中轻松切换语言版本。
 
 ## 特性
