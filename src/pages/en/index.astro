@@ -1,0 +1,440 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Intelligent Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: #fdfdfd;
+        color: #0d0d0d;
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 2.5rem;
+      }
+
+      header {
+        padding: 2rem 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .nav-container {
+        display: inline-flex;
+        align-items: center;
+        gap: 2.5rem;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 0.6rem 1.5rem;
+        border-radius: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .logo-icon {
+        width: 26px;
+        height: 26px;
+        background: #0d0d0d;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo-icon::before {
+        content: 'G';
+        color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #0d0d0d;
+        font-size: 0.85rem;
+        font-weight: 500;
+        opacity: 0.85;
+        padding: 0.4rem 0.8rem;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-links a.active {
+        background: #0d0d0d;
+        color: white;
+        opacity: 1;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .language-selector {
+        position: relative;
+      }
+
+      .language-btn {
+        background: transparent;
+        border: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #0d0d0d;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 6px;
+        transition: background 0.2s ease;
+      }
+
+      .language-btn:hover {
+        background: #f0f0f0;
+      }
+
+      .language-btn::after {
+        content: '▾';
+        font-size: 0.7rem;
+        opacity: 0.6;
+      }
+
+      .language-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0.5rem;
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        padding: 0.4rem;
+        min-width: 110px;
+        display: none;
+        z-index: 100;
+      }
+
+      .language-dropdown.show {
+        display: block;
+      }
+
+      .language-option {
+        display: block;
+        padding: 0.5rem 0.8rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        color: #0d0d0d;
+        transition: background 0.2s ease;
+      }
+
+      .language-option:hover {
+        background: #f0f0f0;
+      }
+
+      main {
+        padding: 2rem 0 4rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 55% 45%;
+        gap: 2rem;
+        align-items: center;
+        min-height: 75vh;
+      }
+
+      .hero-content {
+        padding-right: 1rem;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f3f3f3;
+        padding: 0.35rem 0.9rem;
+        border-radius: 100px;
+        font-size: 0.72rem;
+        font-weight: 500;
+        margin-bottom: 1.8rem;
+        letter-spacing: 0.01em;
+      }
+
+      .badge::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: #0d0d0d;
+        border-radius: 50%;
+      }
+
+      h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1.05;
+        margin-bottom: 1.8rem;
+        letter-spacing: -0.04em;
+      }
+
+      h1 span {
+        font-style: italic;
+        font-weight: 400;
+        color: #555;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+
+      .description {
+        font-size: 0.98rem;
+        color: #555;
+        margin-bottom: 2.2rem;
+        max-width: 520px;
+        line-height: 1.7;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 1.2rem;
+        margin-bottom: 5rem;
+        align-items: center;
+      }
+
+      .btn {
+        padding: 0.9rem 1.8rem;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s ease;
+      }
+
+      .btn-primary {
+        background: #0d0d0d;
+        color: white;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-primary:hover {
+        background: #262626;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: #0d0d0d;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.9rem 1rem;
+        font-weight: 500;
+      }
+
+      .btn-secondary::before {
+        content: '▶';
+        font-size: 0.6rem;
+        width: 28px;
+        height: 28px;
+        border: 2px solid #0d0d0d;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .trusted-by {
+        margin-top: 2rem;
+      }
+
+      .trusted-by p {
+        font-size: 0.75rem;
+        color: #888;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .logos {
+        display: flex;
+        gap: 2.2rem;
+        align-items: center;
+        opacity: 0.5;
+      }
+
+      .logo-item {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #444;
+        letter-spacing: 0.02em;
+      }
+
+      .hero-image {
+        position: relative;
+        height: 700px;
+      }
+
+      .image-container {
+        position: absolute;
+        right: -4rem;
+        top: 0;
+        width: 120%;
+        height: 100%;
+      }
+
+      .gradient-bg {
+        position: absolute;
+        left: 10%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        width: 65%;
+        height: 70%;
+        background: radial-gradient(ellipse at center, #ffd4d4 0%, #ffb3b3 50%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.9;
+      }
+
+      .portrait-wrapper {
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+
+      .portrait-wrapper img {
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        filter: grayscale(100%);
+        object-fit: contain;
+        mix-blend-mode: multiply;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <div class="nav-container">
+            <a href="/en" class="logo" style="text-decoration: none; color: inherit;">
+              <div class="logo-icon"></div>
+            </a>
+            <div class="language-selector">
+              <button class="language-btn" id="langBtn">English</button>
+              <div class="language-dropdown" id="langDropdown">
+                <div class="language-option" data-lang="zh">中文</div>
+                <div class="language-option" data-lang="en">English</div>
+              </div>
+            </div>
+            <div class="nav-links">
+              <a href="/en" class="active">Home</a>
+              <a href="/en/product">Product</a>
+              <a href="/en/value">Value</a>
+              <a href="/en/stories">Stories</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-content">
+            <span class="badge">AI-powered workspace</span>
+            <h1>Intelligent Technology<br />That <span>Simplifies Your World</span></h1>
+            <p class="description">
+              From your morning routine to your evening wind-down, intelligent systems seamlessly integrate into your daily flow—so you can focus on what truly matters.
+            </p>
+            <div class="buttons">
+              <a href="/en/product" style="text-decoration: none;">
+                <button class="btn btn-primary">Get early access</button>
+              </a>
+              <a href="/en/value" style="text-decoration: none;">
+                <button class="btn btn-secondary">See how it works</button>
+              </a>
+            </div>
+            <div class="trusted-by">
+              <p>Trusted by teams at</p>
+              <div class="logos">
+                <span class="logo-item">TWITCH</span>
+                <span class="logo-item">Stripe</span>
+                <span class="logo-item">GitHub</span>
+                <span class="logo-item">Vercel</span>
+                <span class="logo-item">Slack</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="image-container">
+              <div class="gradient-bg"></div>
+              <div class="portrait-wrapper">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&h=900&fit=crop" alt="Portrait" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      const langBtn = document.getElementById('langBtn');
+      const langDropdown = document.getElementById('langDropdown');
+      const langOptions = document.querySelectorAll('.language-option');
+
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('show');
+      });
+
+      document.addEventListener('click', () => {
+        langDropdown.classList.remove('show');
+      });
+
+      langOptions.forEach(option => {
+        option.addEventListener('click', () => {
+          const lang = option.dataset.lang;
+          langBtn.textContent = option.textContent;
+          langDropdown.classList.remove('show');
+          
+          const path = window.location.pathname;
+          if (lang === 'zh') {
+            window.location.pathname = path.replace('/en', '') || '/';
+          } else {
+            window.location.pathname = '/en' + path;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

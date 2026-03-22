@@ -1,0 +1,127 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Value - Intelligent Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: #fdfdfd; color: #0d0d0d; line-height: 1.5; }
+      .container { max-width: 1300px; margin: 0 auto; padding: 0 2.5rem; }
+      header { padding: 2rem 0; }
+      nav { display: flex; justify-content: center; align-items: center; }
+      .nav-container { display: inline-flex; align-items: center; gap: 2.5rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); padding: 0.6rem 1.5rem; border-radius: 50px; border: 1px solid rgba(0,0,0,0.05); }
+      .logo { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.95rem; }
+      .logo-icon { width: 26px; height: 26px; background: #0d0d0d; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+      .logo-icon::before { content: 'G'; color: white; font-weight: 700; font-size: 0.9rem; }
+      .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+      .nav-links a { text-decoration: none; color: #0d0d0d; font-size: 0.85rem; font-weight: 500; opacity: 0.85; padding: 0.4rem 0.8rem; border-radius: 8px; transition: all 0.2s ease; }
+      .nav-links a:hover { background: rgba(0, 0, 0, 0.05); }
+      .nav-links a.active { background: #0d0d0d; color: white; opacity: 1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
+      .language-selector { position: relative; }
+      .language-btn { background: transparent; border: none; font-size: 0.85rem; font-weight: 500; color: #0d0d0d; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.6rem; border-radius: 6px; transition: background 0.2s ease; }
+      .language-btn:hover { background: #f0f0f0; }
+      .language-btn::after { content: '▾'; font-size: 0.7rem; opacity: 0.6; }
+      .language-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.5rem; background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.4rem; min-width: 110px; display: none; z-index: 100; }
+      .language-dropdown.show { display: block; }
+      .language-option { display: block; padding: 0.5rem 0.8rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: #0d0d0d; transition: background 0.2s ease; }
+      .language-option:hover { background: #f0f0f0; }
+      main { padding: 2rem 0 4rem; }
+      .hero { padding: 4rem 0; }
+      .badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #f3f3f3; padding: 0.35rem 0.9rem; border-radius: 100px; font-size: 0.72rem; font-weight: 500; margin-bottom: 1.8rem; letter-spacing: 0.01em; }
+      .badge::before { content: ''; width: 8px; height: 8px; background: #0d0d0d; border-radius: 50%; }
+      h1 { font-size: 4rem; font-weight: 700; line-height: 1.05; margin-bottom: 1.8rem; letter-spacing: -0.04em; }
+      h1 span { font-style: italic; font-weight: 400; color: #555; font-family: Georgia, 'Times New Roman', Times, serif; }
+      .description { font-size: 0.98rem; color: #555; margin-bottom: 3rem; max-width: 520px; line-height: 1.7; }
+      .value-points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+      .value-item { background: white; padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); }
+      .value-number { font-size: 3rem; font-weight: 700; color: #0d0d0d; margin-bottom: 0.5rem; }
+      .value-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
+      .value-desc { color: #555; font-size: 0.95rem; line-height: 1.6; }
+      .buttons { display: flex; gap: 1.2rem; align-items: center; }
+      .btn { padding: 0.9rem 1.8rem; border-radius: 12px; font-size: 0.9rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s ease; }
+      .btn-primary { background: #0d0d0d; color: white; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+      .btn-primary:hover { background: #262626; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <div class="nav-container">
+            <a href="/en" class="logo" style="text-decoration: none; color: inherit;">
+              <div class="logo-icon"></div>
+            </a>
+            <div class="language-selector">
+              <button class="language-btn" id="langBtn">English</button>
+              <div class="language-dropdown" id="langDropdown">
+                <div class="language-option" data-lang="zh">中文</div>
+                <div class="language-option" data-lang="en">English</div>
+              </div>
+            </div>
+            <div class="nav-links">
+              <a href="/en">Home</a>
+              <a href="/en/product">Product</a>
+              <a href="/en/value" class="active">Value</a>
+              <a href="/en/stories">Stories</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section class="hero">
+          <span class="badge">Our Value</span>
+          <h1>Creating Real<br /><span>Value for You</span></h1>
+          <p class="description">We don't just provide technology—we create lasting business value together with you.</p>
+          <div class="value-points">
+            <div class="value-item">
+              <div class="value-number">10x</div>
+              <h3 class="value-title">Efficiency Boost</h3>
+              <p class="value-desc">Automated workflows increase your team's efficiency by 10x or more.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-number">50%</div>
+              <h3 class="value-title">Cost Reduction</h3>
+              <p class="value-desc">Intelligent optimization helps you save 50% on operational costs.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-number">24/7</div>
+              <h3 class="value-title">Always On</h3>
+              <p class="value-desc">AI assistant serves you around the clock, never gets tired.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-number">∞</div>
+              <h3 class="value-title">Infinite Potential</h3>
+              <p class="value-desc">Continuous learning unlocks unlimited possibilities for you.</p>
+            </div>
+          </div>
+          <div style="margin-top: 3rem;">
+            <div class="buttons">
+              <a href="/en/product" style="text-decoration: none;">
+                <button class="btn btn-primary">Learn More</button>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      const langBtn = document.getElementById('langBtn');
+      const langDropdown = document.getElementById('langDropdown');
+      const langOptions = document.querySelectorAll('.language-option');
+      langBtn.addEventListener('click', e => { e.stopPropagation(); langDropdown.classList.toggle('show'); });
+      document.addEventListener('click', () => langDropdown.classList.remove('show'));
+      langOptions.forEach(option => option.addEventListener('click', () => {
+        const lang = option.dataset.lang;
+        langBtn.textContent = option.textContent;
+        langDropdown.classList.remove('show');
+        const path = window.location.pathname;
+        window.location.pathname = lang === 'zh' ? path.replace('/en', '') || '/' : '/en' + path;
+      }));
+    </script>
+  </body>
+</html>
