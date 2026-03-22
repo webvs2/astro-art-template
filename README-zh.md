@@ -100,6 +100,7 @@ atrom/
 3. **配置说明**：
    - 项目包含 `cloudflare_pages.yml` 配置文件作为参考
    - 对于服务器端渲染，确保已在 `astro.config.mjs` 中配置了 Cloudflare 适配器
+   - **重要提示**：请勿在 Cloudflare Pages 仪表板中设置自定义部署命令。Cloudflare Pages 会自动从 `dist` 目录部署构建输出。
 
 ## 许可证
 

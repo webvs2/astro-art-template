@@ -100,6 +100,7 @@ The theme supports both Chinese and English languages. The language selector is 
 3. **Configuration**:
    - The project includes a `cloudflare_pages.yml` configuration file for reference
    - For server-side rendering, ensure the Cloudflare adapter is configured in `astro.config.mjs`
+   - **Important**: Do NOT set a custom deploy command in Cloudflare Pages dashboard. Cloudflare Pages will automatically deploy the build output from the `dist` directory.
 
 ## License
 
