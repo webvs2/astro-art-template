@@ -8,6 +8,11 @@
 
 一个美观、响应式的 Astro 主题，采用简洁设计和现代美学风格，专为 Astro v6 构建。支持中英文语言切换，可在导航栏中轻松切换语言版本。
 
+### 在线预览
+
+查看主题的在线预览：
+[https://astro-art-template.2636098325.workers.dev/](https://astro-art-template.2636098325.workers.dev/)
+
 ## 特性
 
 - 🎨 **简洁设计**：简约优雅的 UI 设计

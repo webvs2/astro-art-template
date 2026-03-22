@@ -8,6 +8,11 @@
 
 A beautiful, responsive Astro theme with a clean design and modern aesthetics, built for Astro v6. Supports Chinese and English language switching, which can be easily toggled in the navigation bar.
 
+### Live Preview
+
+Check out the live preview of this theme:
+[https://astro-art-template.2636098325.workers.dev/](https://astro-art-template.2636098325.workers.dev/)
+
 ## Features
 
 - 🎨 **Clean Design**: Minimalist and elegant UI design
