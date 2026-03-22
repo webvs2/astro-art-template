@@ -37,3 +37,9 @@ lerna-debug.log*
 # Package manager lock files (keep pnpm-lock.yaml as it's already tracked)
 # package-lock.json
 # yarn.lock
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
