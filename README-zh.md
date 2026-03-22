@@ -72,6 +72,30 @@ atrom/
 
 该主题支持中文和英文两种语言。语言选择器位于导航栏中，紧挨着 logo。
 
+## 部署
+
+### Cloudflare Pages
+
+1. **前置要求**：
+
+   - Cloudflare 账户
+   - 包含 Astro 项目的 Git 仓库
+
+2. **部署步骤**：
+
+   - 登录 Cloudflare 账户
+   - 导航至 **Workers & Pages** > **创建应用程序** > **Pages**
+   - 选择你的 Git 仓库和分支
+   - 配置构建设置：
+     - **框架预设**：Astro
+     - **构建命令**：`pnpm build`
+     - **构建输出目录**：`dist`
+   - 点击 **保存并部署**
+
+3. **配置说明**：
+   - 项目包含 `cloudflare_pages.yml` 配置文件作为参考
+   - 对于服务器端渲染，确保已在 `astro.config.mjs` 中配置了 Cloudflare 适配器
+
 ## 许可证
 
 MIT

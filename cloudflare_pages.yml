@@ -1,0 +1,20 @@
+# Cloudflare Pages configuration file
+# https://developers.cloudflare.com/pages/platform/build-configuration/
+
+# Build settings
+build:
+  # Directory to deploy (relative to your repo root)
+  publish: dist
+
+  # Build command (defaults to your framework's build command if not set)
+  command: pnpm build
+
+# Environment variables
+# These variables are set in the Cloudflare Pages dashboard
+# You can also add them here for reference
+# env:
+#   NODE_VERSION: "22.12.0"
+
+# Additional settings
+# You can add more settings here based on your needs
+# https://developers.cloudflare.com/pages/platform/build-configuration/#build-configuration

@@ -72,6 +72,30 @@ atrom/
 
 The theme supports both Chinese and English languages. The language selector is prominently placed in the navigation bar, right after the logo.
 
+## Deployment
+
+### Cloudflare Pages
+
+1. **Prerequisites**:
+
+   - A Cloudflare account
+   - Git repository with your Astro project
+
+2. **Deployment Steps**:
+
+   - Log in to your Cloudflare account
+   - Navigate to **Workers & Pages** > **Create application** > **Pages**
+   - Select your Git repository and branch
+   - Configure build settings:
+     - **Framework preset**: Astro
+     - **Build command**: `pnpm build`
+     - **Build output directory**: `dist`
+   - Click **Save and Deploy**
+
+3. **Configuration**:
+   - The project includes a `cloudflare_pages.yml` configuration file for reference
+   - For server-side rendering, ensure the Cloudflare adapter is configured in `astro.config.mjs`
+
 ## License
 
 MIT
