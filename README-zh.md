@@ -8,6 +8,11 @@
 
 一个美观、响应式的 Astro 主题，采用简洁设计和现代美学风格，专为 Astro v6 构建。支持中英文语言切换，可在导航栏中轻松切换语言版本。
 
+### 在线预览
+
+查看主题的在线预览：
+[https://astro-art-template.2636098325.workers.dev/](https://astro-art-template.2636098325.workers.dev/)
+
 ## 特性
 
 - 🎨 **简洁设计**：简约优雅的 UI 设计
@@ -71,6 +76,31 @@ atrom/
 ## 语言切换
 
 该主题支持中文和英文两种语言。语言选择器位于导航栏中，紧挨着 logo。
+
+## 部署
+
+### Cloudflare Pages
+
+1. **前置要求**：
+
+   - Cloudflare 账户
+   - 包含 Astro 项目的 Git 仓库
+
+2. **部署步骤**：
+
+   - 登录 Cloudflare 账户
+   - 导航至 **Workers & Pages** > **创建应用程序** > **Pages**
+   - 选择你的 Git 仓库和分支
+   - 配置构建设置：
+     - **框架预设**：Astro
+     - **构建命令**：`pnpm build`
+     - **构建输出目录**：`dist`
+   - 点击 **保存并部署**
+
+3. **配置说明**：
+   - 项目包含 `cloudflare_pages.yml` 配置文件作为参考
+   - 对于服务器端渲染，确保已在 `astro.config.mjs` 中配置了 Cloudflare 适配器
+   - **重要提示**：请勿在 Cloudflare Pages 仪表板中设置自定义部署命令。Cloudflare Pages 会自动从 `dist` 目录部署构建输出。
 
 ## 许可证
 
